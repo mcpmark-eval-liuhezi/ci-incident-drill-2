@@ -1,0 +1,15 @@
+name: Drill Fail
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  fail-on-purpose:
+    name: Fail on purpose
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simulate a broken CI step
+        run: |
+          echo "Intentional failure for the CI incident-response drill."
+          exit 1
